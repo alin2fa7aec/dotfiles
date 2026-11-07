@@ -1,7 +1,7 @@
 # nordfox (nightfox.nvim) colors, matching the waybar and wezterm themes.
 # Colors are written as RRGGBB[AA]
 
-# The background is the same wallpaper as swaybg (swaybg in yukinimoyuru/home/alin.nix). Monitors without an image are filled with color
+# The background is the wallpaper image at ~/.local/share/wallpaper/<output>, the same file the desktop wallpaper is expected to use. Monitors without an image are filled with color
 image=DP-3:~/.local/share/wallpaper/DP-3
 image=HDMI-A-1:~/.local/share/wallpaper/HDMI-A-1
 scaling=fill

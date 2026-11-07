@@ -282,13 +282,13 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// waybar, swaync for notifications, and swaybg for the wallpaper are systemd user services in yukinimoyuru/home/alin.nix, started along with niri.service
+// waybar, swaync for notifications, and swaybg for the wallpaper are not spawned here. They are expected to run as systemd user services started along with niri.service
 
 spawn-at-startup "fcitx5" "-d"
 
-// yukinimoyuru/home/alin.nix writes the GTK and Qt appearance settings (QT_QPA_PLATFORMTHEME etc.) to the systemd user environment, so apps launched from niri get them too
+// The GTK and Qt appearance settings (QT_QPA_PLATFORMTHEME etc.) are expected in the systemd user environment, so apps launched from niri get them too
 
-// Use Adwaita for the cursor, the same as home.pointerCursor in yukinimoyuru/home/alin.nix
+// Use Adwaita for the cursor. Keep it the same as the cursor theme GTK and Qt apps use
 cursor {
     xcursor-theme "Adwaita"
     xcursor-size 24
@@ -632,7 +632,7 @@ binds {
     Mod+S hotkey-overlay-title="Toggle the 4K Bar" { spawn "pkill" "-USR1" "waybar"; }
 
     // Pick from the clipboard history with fuzzel and put the choice on the clipboard (Meta+V, as on Windows and KDE).
-    // kanata's Muhenkan+V sends this key too. The history is recorded by the cliphist service in yukinimoyuru/home/alin.nix.
+    // kanata's Muhenkan+V sends this key too. The history has to be recorded separately, e.g. by a service running wl-paste --watch cliphist store.
     // Pass to wl-copy only when something is chosen, so closing with Esc does not overwrite the clipboard with nothing
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh r#"sel=$(cliphist list | fuzzel --dmenu --only-match --with-nth=2 --placeholder=Clipboard) && printf '%s\n' "$sel" | cliphist decode | wl-copy"#; }
 
@@ -654,7 +654,7 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
-    // As in KDE, Ctrl+Alt+Delete opens a power menu to choose lock, log out, reboot, and so on (power-menu in yukinimoyuru/home/alin.nix)
+    // As in KDE, Ctrl+Alt+Delete opens a power menu to choose lock, log out, reboot, and so on (the power-menu command, from fuzzel/power-menu.sh)
     Ctrl+Alt+Delete hotkey-overlay-title="Power Menu" { spawn "power-menu"; }
 
     // Powers off the monitors. To turn them back on, do any input like

@@ -1,4 +1,4 @@
-// Definitions of the waybar boxes and the wiring between them. build.mjs checks the rules and writes the wiring for style.css and the clock ring (yukinimoyuru/pkgs/clock-ring).
+// Definitions of the waybar boxes and the wiring between them. build.mjs checks the rules and writes the wiring for style.css and the clock ring (wires.json).
 // The wiring is styled after circuit board traces. Coordinates are px with each module's top left as the origin, y pointing down.
 
 export const BAR_WIDTH = 52;
@@ -208,7 +208,7 @@ export const modules = {
 // Left and right edges of the tray box, used to keep top-edge contact points away from corners
 export const tray = { left: 18, right: 47 };
 
-// The clock ring at the top right of the QHD monitor. Sizes match the constants in yukinimoyuru/pkgs/clock-ring/clock-ring.py.
+// The clock ring at the top right of the QHD monitor. Sizes must match the constants of the program that draws the clock ring.
 // The window's right edge touches the vertical bar's left edge, so the line exiting left of overview comes straight in
 export const ring = {
   w: 222,

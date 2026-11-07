@@ -28,7 +28,7 @@
     "tooltip-format-deactivated": "Screen sleeps as usual"
   },
   "clock": {
-    // The time is left to the QHD wall clock (yukinimoyuru/pkgs/clock-ring); this shows only the year and date as an entry to the calendar
+    // The time is left to a separate wall clock on the QHD monitor (the clock ring, whose wiring is laid out in waybar/circuit); this shows only the year and date as an entry to the calendar
     "format": "{:%Y\n%m/%d}",
     // The system LC_TIME is ja_JP, so use en_US for the clock alone to get English weekday and month names in the calendar
     "locale": "en_US.UTF-8",
@@ -75,7 +75,7 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw"
   },
-  // Open the power menu (power-menu in yukinimoyuru/home/alin.nix)
+  // Open the power menu (the power-menu command, from fuzzel/power-menu.sh)
   "custom/power": {
     "format": "󰐥",
     "tooltip": false,

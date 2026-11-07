@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Checks the boxes and wiring in layout.mjs and writes the following three files.
 //   - the marked box and wiring section of waybar/style.css
-//   - waybar/circuit/wires.json (wiring pixels for the round clock, read by yukinimoyuru/pkgs/clock-ring)
+//   - waybar/circuit/wires.json (wiring pixels for the round clock, read by the program that draws it)
 //   - waybar/circuit/preview.html (a preview to view in a browser)
 // If anything breaks the rules, only the preview is written and it exits with code 1.
 // Usage: node waybar/circuit/build.mjs
@@ -496,7 +496,7 @@ function render() {
   }
 }
 
-// The clock ring. Drawn in the same order as paint in yukinimoyuru/pkgs/clock-ring/clock-ring.py
+// The clock ring. Drawn in the same order as the program that draws the real clock ring paints it
 const ring = D.ring;
 const canvas = document.getElementById("ring");
 canvas.width = ring.w;

@@ -1,6 +1,6 @@
 /* The nordfox (nightfox.nvim) palette, matching the wezterm theme.
-   waybar and swaync read it with @import, and yukinimoyuru/home/alin.nix builds the fcitx5 theme by picking colors from this file.
-   The nix side reads lines consisting only of "@define-color name #rrggbb;", so write one color per line in this form */
+   waybar and swaync read it with @import. Themes for programs that cannot read CSS, such as the fcitx5 candidate window, are generated
+   by picking out lines consisting only of "@define-color name #rrggbb;", so write one color per line in this form */
 
 @define-color black #3b4252;
 @define-color red #bf616a;
