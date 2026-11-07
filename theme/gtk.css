@@ -1,4 +1,4 @@
-/* gtk.css for GTK 3 and GTK 4. yukinimoyuru/home/alin.nix puts it in both ~/.config/gtk-3.0 and gtk-4.0.
+/* gtk.css for GTK 3 and GTK 4. Place it in both ~/.config/gtk-3.0 and gtk-4.0, with nordfox.css next to it.
    adw-gtk3 (GTK 3) and libadwaita (GTK 4) both paint with the same named colors, so override them with the nordfox palette */
 @import url("nordfox.css");
 

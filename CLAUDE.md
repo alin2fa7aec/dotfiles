@@ -4,11 +4,11 @@ Config files for the user's applications, one directory per application. See `RE
 
 ## Editing
 
-- This repository holds only the files themselves. Placing them is each machine's job. On the NixOS desktop, the `yukinimoyuru` repository reads this one as a flake input (`inputs.dotfiles`) and places the files from `home/alin.nix` and `hosts/desktop/configuration.nix`. Adding, renaming or removing a file here usually needs a matching change there.
-- On that desktop, most placed files are store copies pinned by yukinimoyuru's `flake.lock`, so an edit here reaches them only after `nix flake update dotfiles` and a rebuild there. A few files (the global `CLAUDE.md`, the `commit-message` skill, `keybindings.json`, `statusline.sh`) are linked straight to the checkout at `~/!metier/dotfiles`, so edits to them take effect at once.
+- This repository holds only the files themselves. Placing them is each machine's job, so nothing here depends on how a particular machine is set up. Comments state what a file expects from its environment (a command on PATH, a file next to it, a service that handles something), not which repository or file provides it.
+- A machine may place pinned copies of this repository instead of linking to the checkout, so an edit here can reach it only after that machine updates its pin and applies. Adding, renaming or removing a file usually needs a matching change on the machine's side too. Tell the user when an edit needs either.
 - `claude/skills/writing-style/` is the source of truth for the skill registered on claude.ai. After editing it, tell the user to upload it to claude.ai again. It is not placed in `~/.claude/skills` on any machine, because Claude Code already gets the claude.ai copy. The rule names `claude/writing-lint.nu` reports must match the section headings of its `reference.md`.
-- Comments that point to another file use paths relative to the repository root, such as `niri/config.kdl`. Paths into yukinimoyuru start with `yukinimoyuru/`, such as `yukinimoyuru/home/alin.nix`.
-- Keep everything this repository's own scripts read or write inside it. Files yukinimoyuru needs from here, such as `waybar/circuit/wires.json`, are generated here and read there through `inputs.dotfiles`.
+- Comments that point to another file use paths relative to the repository root, such as `niri/config.kdl`. Do not point to files outside this repository.
+- Keep everything this repository's own scripts read or write inside it. Generated files that other programs read, such as `waybar/circuit/wires.json`, are committed here.
 
 ## Commits
 
