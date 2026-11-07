@@ -208,7 +208,7 @@ export const modules = {
 // Left and right edges of the tray box, used to keep top-edge contact points away from corners
 export const tray = { left: 18, right: 47 };
 
-// The clock ring at the top right of the QHD monitor. Sizes must match the constants of the program that draws the clock ring.
+// The clock ring at the top right of the QHD monitor. Its size, center and radius are written to wires.json, and the program that draws the clock reads them from there.
 // The window's right edge touches the vertical bar's left edge, so the line exiting left of overview comes straight in
 export const ring = {
   w: 222,
