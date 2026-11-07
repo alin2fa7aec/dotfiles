@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Checks the boxes and wiring in layout.mjs and writes the following three files.
 //   - the marked box and wiring section of waybar/style.css
-//   - waybar/circuit/wires.json (wiring pixels for the round clock, read by the program that draws it)
+//   - waybar/circuit/wires.json (the round clock's size, center, radius and wiring pixels, read by the program that draws it)
 //   - waybar/circuit/preview.html (a preview to view in a browser)
 // If anything breaks the rules, only the preview is written and it exits with code 1.
 // Usage: node waybar/circuit/build.mjs
@@ -294,8 +294,11 @@ for (const [name, mod] of Object.entries(L.modules)) {
 
 // ---- Clock ring ----
 
+// The geometry goes into wires.json too, so the program that draws the clock takes its size and position from here
 const ringJson = {
   size: [L.ring.w, L.ring.h],
+  center: [L.ring.cx, L.ring.cy],
+  radius: L.ring.r,
   wires: ringTraces.flatMap((t) => {
     const rs = runs(t.pixels);
     return rs.flatMap((r, i) => {
