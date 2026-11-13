@@ -87,8 +87,8 @@
   muhenkan  @mh
   ;; Henkan -> hold to activate the layer
   henkan    @hk
-  ;; Katakana/Hiragana -> JIS: min = - / Shift+min = =
-  katakana  min
+  ;; Katakana/Hiragana -> Esc
+  katakana  esc
   ;; Hankaku/Zenkaku (KEY_GRAVE on JIS), R Alt -> leader
   grv       @ldr
   ralt      @ldr
@@ -121,7 +121,7 @@
 
   ;; Other
   v    @clip          ;; clipboard history
-  spc  mlft           ;; left click
+  spc  enter
 )
 
 ;; ============================================================
@@ -153,5 +153,5 @@
   x    8
   z    9
 
-  spc  mrgt           ;; right click
+  spc  min            ;; JIS: - / Shift: =
 )
