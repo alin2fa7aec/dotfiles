@@ -23,15 +23,24 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
+  "env": {
+    "CARGO_HOME": "~/.cache/claude-sandbox/cargo",
+    "npm_config_cache": "~/.cache/claude-sandbox/npm",
+    "BUN_INSTALL_CACHE_DIR": "~/.cache/claude-sandbox/bun"
+  },
   "sandbox": {
     "enabled": true,
     "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "allowWrite": ["~/.cache/claude-sandbox"]
+    },
     "network": {
       "allowedDomains": [
         "github.com",
         "crates.io",
         "index.crates.io",
-        "static.crates.io"
+        "static.crates.io",
+        "registry.npmjs.org"
       ]
     }
   },
