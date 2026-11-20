@@ -2,6 +2,9 @@
 # After changing, restart with fcitx5 -r -d to apply
 
 [conversion]
+live_min_chars = 3
+prediction_key = "tab"
+commit_on_type_in_conversion = true
 
 [learning]
 enabled = true

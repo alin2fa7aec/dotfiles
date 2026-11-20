@@ -14,6 +14,10 @@
 - 入力: `kanata/`, `karukan/`
 - Claude Code: `claude/` (指示、設定、スキル、キーバインド、ステータスライン、文章スタイルの lint)
 
+## Claude Code の設定
+
+`claude/managed-settings.json` の `env` に書くパスは `~/...` の形にしている。配置するマシンの側で絶対パスに展開する前提である。
+
 ## Claude Code のスキル
 
 `claude/skills/writing-style/` は、claude.ai に登録しているスキルの正本である。編集したら claude.ai にアップロードし直す。claude.ai から、ブラウザーと各マシンの Claude Code に同期される。claude.ai 上では編集しない。また、`~/.claude/skills` に直接配置すると Claude Code が2重に読み込むため、配置しない。

@@ -14,6 +14,10 @@ How the files are placed is up to each machine. On my NixOS desktop, [yukinimoyu
 - Input: `kanata/`, `karukan/`
 - Claude Code: `claude/` (instructions, settings, skills, keybindings, the status line, and the writing-style lint)
 
+## Claude Code settings
+
+Paths in the `env` of `claude/managed-settings.json` are written as `~/...`. The machine that places the file is expected to expand them to absolute paths.
+
 ## Claude Code skills
 
 `claude/skills/writing-style/` is the source of the skill registered on claude.ai. After editing it, upload it to claude.ai again; claude.ai then syncs it to the browser and to Claude Code on every machine. Do not edit it on claude.ai, and do not place it in `~/.claude/skills` directly, or Claude Code loads it twice.
