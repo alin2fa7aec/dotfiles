@@ -51,7 +51,7 @@ unset LC_ALL
 # --- mise ---------------------------------------------------------------
 
 # Use CLI tools installed with mise through their shims.
-# This file is also mounted into the tools/diva container, which has no mise, so add the shims only when they exist.
+# Some environments that load this file, such as containers, have no mise, so add the shims only when they exist.
 # Avoid stacking duplicates onto PATH in nested shells.
 __mise_shims="$HOME/.local/share/mise/shims"
 if [[ -d $__mise_shims && ":$PATH:" != *":$__mise_shims:"* ]]; then
