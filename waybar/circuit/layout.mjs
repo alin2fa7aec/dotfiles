@@ -38,7 +38,7 @@ export const modules = {
       // Two lines exiting through the top of the screen
       { path: [pin("top", 30), [30, 0]] },
       { path: [pin("top", 38), [38, 0]] },
-      // Exits through the left edge and, on left, enters the clock ring's north point
+      // Exits through the left edge and, on the left monitor, enters the clock ring's north point
       { path: [pin("left", 24), [8, 24], [8, 4], [0, 4]] },
       // To the first workspace
       { path: [pin("bottom", 24), [24, 49], [20, 49], [20, 53]] },
@@ -162,11 +162,11 @@ export const modules = {
       { path: [[51, 0], [51, 49]] },
       // To the notifications
       { path: [pin("bottom", 14), [14, 49]] },
-      // Right of the notifications. On left, to the tray
+      // Right of the notifications. On the left monitor, to the tray
       { path: [pin("right", 20), [44, 20], [44, 49]] },
     ],
   },
-  // On the right bar the notifications come last, so lines going down fade out
+  // On the right monitor's bar the notifications come last, so lines going down fade out
   notification: {
     selector: "#custom-notification",
     h: 44,
@@ -179,7 +179,7 @@ export const modules = {
       { path: [pin("bottom", 22), [22, 43]], fade: true },
     ],
   },
-  // On the left bar the tray follows the notifications, so the lines at x=22 and x=44 enter the tray's top edge
+  // On the left monitor's bar the tray follows the notifications, so the lines at x=22 and x=44 enter the tray's top edge
   notificationRight: {
     selector: "window#waybar.right #custom-notification",
     h: 44,

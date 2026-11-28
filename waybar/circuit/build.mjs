@@ -429,7 +429,7 @@ ${css}
 </div>
 <div class="mr"><div id="custom-power">󰐥</div></div>
 </window>
-<span class="label">left (height shown shortened)</span>
+<span class="label">Left (height shown shortened)</span>
 </div>
 <div class="monitor k4">
 <window id="waybar" class="left">
@@ -445,7 +445,7 @@ ${css}
 </div>
 <div class="mr"><div id="custom-power">󰐥</div></div>
 </window>
-<span class="label">right</span>
+<span class="label">Right</span>
 </div>
 </div>
 </div>

@@ -107,15 +107,9 @@ input {
     position x=1280 y=0
 }
 
-// Put the left monitor on the left and the right on the right. The right's x matches the left's logical width (2560 at scale 1)
-output "DP-1" {
-    scale 1
-    position x=0 y=0
-}
-
-output "DP-2" {
-    position x=2560 y=0
-}
+// The desktop is laid out for a left and a right monitor. This file names no outputs:
+// outputs.kdl next to it is expected to hold an output block for each, with the right one's x matching the left one's logical width
+include optional=true "~/.config/niri/outputs.kdl"
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -629,7 +623,7 @@ binds {
 
     // Show or hide the waybar on the right monitor. The other bar ignores SIGUSR1 (waybar/config.jsonc)
     // On NixOS, waybar runs as .waybar-wrapped from a wrapper, so do not match exactly with -x
-    Mod+S hotkey-overlay-title="Toggle the right Bar" { spawn "pkill" "-USR1" "waybar"; }
+    Mod+S hotkey-overlay-title="Toggle the Right Bar" { spawn "pkill" "-USR1" "waybar"; }
 
     // Pick from the clipboard history with fuzzel and put the choice on the clipboard (Meta+V, as on Windows and KDE).
     // kanata's Muhenkan+V sends this key too. The history has to be recorded separately, e.g. by a service running wl-paste --watch cliphist store.

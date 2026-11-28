@@ -73,7 +73,7 @@ tooltip label {
   color: @red;
 }
 
-/* On the left bar, the tray follows the notifications.
+/* On the left monitor's bar, the tray follows the notifications.
    The tray's height changes with the number of icons, so its box cannot be drawn with background-image and uses border instead.
    In exchange, the tray has no top margin; the lines from the notifications run down to the bottom of their area and join the tray's top edge */
 #tray {

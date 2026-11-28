@@ -1,9 +1,8 @@
 # nordfox (nightfox.nvim) colors, matching the waybar and wezterm themes.
 # Colors are written as RRGGBB[AA]
 
-# The background is the wallpaper image at ~/.local/share/wallpaper/<output>, the same file the desktop wallpaper is expected to use. Monitors without an image are filled with color
-image=DP-1:~/.local/share/wallpaper/DP-1
-image=DP-2:~/.local/share/wallpaper/DP-2
+# The background is the wallpaper image at ~/.local/share/wallpaper/<output>, the same file the desktop wallpaper is expected to use.
+# This file names no outputs: the machine placing it is expected to append an image=<output>:<path> line for each monitor. Monitors without an image are filled with color
 scaling=fill
 color=232831
 
